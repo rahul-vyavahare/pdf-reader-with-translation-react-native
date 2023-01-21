@@ -189,8 +189,8 @@ export default function Home({ navigation }) {
       await axios.get(`https://od-api.oxforddictionaries.com/api/v2/translations/en/${transLanguage}/${text}?strictMatch=false`,
         {headers: {
           "Accept": "application/json",
-          "app_id": "aab68e2e",
-          "app_key": "3403970b25b78f2e8b577980ffa5fd93"
+          "app_id": app_id,
+          "app_key": api_key
         }
     }).then(response => {
         setTrans(response.data.results[0].lexicalEntries[0].entries[0].senses[0].translations[0].text);
